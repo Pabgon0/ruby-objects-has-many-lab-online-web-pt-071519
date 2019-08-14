@@ -1,6 +1,5 @@
 class Author
   attr_accessor :name
-  @@count = 1
   
   def initialize(name)
     @name = name
@@ -9,14 +8,12 @@ class Author
   def add_post(post)
     self.posts << post
     post.author = self
-    @@count += 1
   end
   
   def add_post_by_title(title)
     post = Post.new(title)
     self.posts << post
     post.author = self
-    @@count +=1
   end
   
   def posts
